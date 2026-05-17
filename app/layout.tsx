@@ -43,6 +43,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-[color:var(--color-page)] text-[color:var(--color-ink)]">
         <ClerkProvider
+          afterSignOutUrl="/"
           appearance={{
             variables: {
               colorPrimary: "#C68F1E",

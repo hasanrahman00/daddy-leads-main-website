@@ -136,7 +136,7 @@ export function DashboardShell({ children }: { children: React.ReactNode }) {
                 <span className="absolute top-1.5 right-2 size-1.5 rounded-full bg-rose-500" />
               </button>
 
-              <UserButton afterSignOutUrl="/" appearance={{ elements: { avatarBox: "size-9" } }} />
+              <UserButton appearance={{ elements: { avatarBox: "size-9" } }} />
             </div>
           </div>
         </header>

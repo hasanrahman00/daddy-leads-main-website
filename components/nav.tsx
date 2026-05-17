@@ -49,10 +49,7 @@ export function Nav() {
             >
               Dashboard
             </Link>
-            <UserButton
-              afterSignOutUrl="/"
-              appearance={{ elements: { avatarBox: "size-9" } }}
-            />
+            <UserButton appearance={{ elements: { avatarBox: "size-9" } }} />
           </Show>
         </div>
       </div>
