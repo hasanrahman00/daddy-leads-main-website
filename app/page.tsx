@@ -293,18 +293,18 @@ function HowItWorks() {
 
 type Tone = "sky" | "amber" | "violet" | "emerald" | "rose" | "indigo" | "teal" | "blue" | "fuchsia" | "lime" | "orange";
 
-const TONE: Record<Tone, { icon: string; halo: string; shadow: string }> = {
-  sky:     { icon: "bg-gradient-to-br from-sky-100 to-sky-50 text-sky-600 ring-sky-200/70",         halo: "bg-sky-200/30",     shadow: "group-hover:shadow-sky-200/50" },
-  amber:   { icon: "bg-gradient-to-br from-amber-100 to-amber-50 text-amber-700 ring-amber-200/70",  halo: "bg-amber-200/30",   shadow: "group-hover:shadow-amber-200/50" },
-  violet:  { icon: "bg-gradient-to-br from-violet-100 to-violet-50 text-violet-600 ring-violet-200/70", halo: "bg-violet-200/30", shadow: "group-hover:shadow-violet-200/50" },
-  emerald: { icon: "bg-gradient-to-br from-emerald-100 to-emerald-50 text-emerald-700 ring-emerald-200/70", halo: "bg-emerald-200/30", shadow: "group-hover:shadow-emerald-200/50" },
-  rose:    { icon: "bg-gradient-to-br from-rose-100 to-rose-50 text-rose-600 ring-rose-200/70",      halo: "bg-rose-200/30",    shadow: "group-hover:shadow-rose-200/50" },
-  indigo:  { icon: "bg-gradient-to-br from-indigo-100 to-indigo-50 text-indigo-600 ring-indigo-200/70", halo: "bg-indigo-200/30", shadow: "group-hover:shadow-indigo-200/50" },
-  teal:    { icon: "bg-gradient-to-br from-teal-100 to-teal-50 text-teal-700 ring-teal-200/70",      halo: "bg-teal-200/30",    shadow: "group-hover:shadow-teal-200/50" },
-  blue:    { icon: "bg-gradient-to-br from-blue-100 to-blue-50 text-blue-600 ring-blue-200/70",      halo: "bg-blue-200/30",    shadow: "group-hover:shadow-blue-200/50" },
-  fuchsia: { icon: "bg-gradient-to-br from-fuchsia-100 to-fuchsia-50 text-fuchsia-600 ring-fuchsia-200/70", halo: "bg-fuchsia-200/30", shadow: "group-hover:shadow-fuchsia-200/50" },
-  lime:    { icon: "bg-gradient-to-br from-lime-100 to-lime-50 text-lime-700 ring-lime-200/70",      halo: "bg-lime-200/30",    shadow: "group-hover:shadow-lime-200/50" },
-  orange:  { icon: "bg-gradient-to-br from-orange-100 to-orange-50 text-orange-600 ring-orange-200/70", halo: "bg-orange-200/30", shadow: "group-hover:shadow-orange-200/50" },
+const TONE: Record<Tone, { icon: string; halo: string; shadow: string; ring: string; accent: string }> = {
+  sky:     { icon: "bg-gradient-to-br from-sky-100 to-sky-50 text-sky-600 ring-sky-200/70",                 halo: "bg-sky-300/40",     shadow: "group-hover:shadow-sky-200/50",     ring: "group-hover:ring-sky-300/70",     accent: "from-sky-400 via-sky-500 to-sky-400" },
+  amber:   { icon: "bg-gradient-to-br from-amber-100 to-amber-50 text-amber-700 ring-amber-200/70",          halo: "bg-amber-300/40",   shadow: "group-hover:shadow-amber-200/50",   ring: "group-hover:ring-amber-300/70",   accent: "from-amber-400 via-amber-500 to-amber-400" },
+  violet:  { icon: "bg-gradient-to-br from-violet-100 to-violet-50 text-violet-600 ring-violet-200/70",       halo: "bg-violet-300/40",  shadow: "group-hover:shadow-violet-200/50",  ring: "group-hover:ring-violet-300/70",  accent: "from-violet-400 via-violet-500 to-violet-400" },
+  emerald: { icon: "bg-gradient-to-br from-emerald-100 to-emerald-50 text-emerald-700 ring-emerald-200/70",   halo: "bg-emerald-300/40", shadow: "group-hover:shadow-emerald-200/50", ring: "group-hover:ring-emerald-300/70", accent: "from-emerald-400 via-emerald-500 to-emerald-400" },
+  rose:    { icon: "bg-gradient-to-br from-rose-100 to-rose-50 text-rose-600 ring-rose-200/70",              halo: "bg-rose-300/40",    shadow: "group-hover:shadow-rose-200/50",    ring: "group-hover:ring-rose-300/70",    accent: "from-rose-400 via-rose-500 to-rose-400" },
+  indigo:  { icon: "bg-gradient-to-br from-indigo-100 to-indigo-50 text-indigo-600 ring-indigo-200/70",       halo: "bg-indigo-300/40",  shadow: "group-hover:shadow-indigo-200/50",  ring: "group-hover:ring-indigo-300/70",  accent: "from-indigo-400 via-indigo-500 to-indigo-400" },
+  teal:    { icon: "bg-gradient-to-br from-teal-100 to-teal-50 text-teal-700 ring-teal-200/70",              halo: "bg-teal-300/40",    shadow: "group-hover:shadow-teal-200/50",    ring: "group-hover:ring-teal-300/70",    accent: "from-teal-400 via-teal-500 to-teal-400" },
+  blue:    { icon: "bg-gradient-to-br from-blue-100 to-blue-50 text-blue-600 ring-blue-200/70",              halo: "bg-blue-300/40",    shadow: "group-hover:shadow-blue-200/50",    ring: "group-hover:ring-blue-300/70",    accent: "from-blue-400 via-blue-500 to-blue-400" },
+  fuchsia: { icon: "bg-gradient-to-br from-fuchsia-100 to-fuchsia-50 text-fuchsia-600 ring-fuchsia-200/70",   halo: "bg-fuchsia-300/40", shadow: "group-hover:shadow-fuchsia-200/50", ring: "group-hover:ring-fuchsia-300/70", accent: "from-fuchsia-400 via-fuchsia-500 to-fuchsia-400" },
+  lime:    { icon: "bg-gradient-to-br from-lime-100 to-lime-50 text-lime-700 ring-lime-200/70",              halo: "bg-lime-300/40",    shadow: "group-hover:shadow-lime-200/50",    ring: "group-hover:ring-lime-300/70",    accent: "from-lime-400 via-lime-500 to-lime-400" },
+  orange:  { icon: "bg-gradient-to-br from-orange-100 to-orange-50 text-orange-600 ring-orange-200/70",       halo: "bg-orange-300/40",  shadow: "group-hover:shadow-orange-200/50",  ring: "group-hover:ring-orange-300/70",  accent: "from-orange-400 via-orange-500 to-orange-400" },
 };
 
 type Feature = {
@@ -371,15 +371,24 @@ function FeatureGrid() {
         <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
           {features.map((f) => {
             const t = TONE[f.tone];
+            const [priceMain, priceUnit] = f.price.includes(" / ")
+              ? f.price.split(" / ")
+              : [f.price, ""];
             return (
               <article
                 key={f.title}
-                className={`group relative overflow-hidden rounded-2xl bg-white ring-1 ring-[color:var(--color-line)] p-5 flex flex-col transition-all duration-300 hover:-translate-y-1 hover:ring-2 hover:ring-[color:var(--color-gold)]/50 hover:shadow-2xl ${t.shadow}`}
+                className={`group relative overflow-hidden rounded-2xl bg-white ring-1 ring-[color:var(--color-line)] p-5 md:p-6 flex flex-col transition-all duration-300 hover:-translate-y-1 hover:ring-2 hover:shadow-xl ${t.ring} ${t.shadow}`}
               >
+                {/* top accent stripe — tone-colored, slides in on hover */}
+                <div
+                  aria-hidden
+                  className={`absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r ${t.accent} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+                />
+
                 {/* corner halo that warms on hover */}
                 <div
                   aria-hidden
-                  className={`absolute -bottom-16 -right-16 size-48 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${t.halo}`}
+                  className={`absolute -top-16 -right-16 size-48 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${t.halo}`}
                 />
 
                 {f.badge && (
@@ -391,30 +400,36 @@ function FeatureGrid() {
                 )}
 
                 <div
-                  className={`relative size-14 rounded-2xl grid place-items-center text-3xl ring-1 transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6 ${t.icon}`}
+                  className={`relative size-12 rounded-xl grid place-items-center text-[26px] ring-1 transition-transform duration-300 group-hover:scale-110 ${t.icon}`}
                   aria-hidden
                 >
                   <span className="drop-shadow-sm">{f.emoji}</span>
                 </div>
 
-                <h3 className="relative mt-4 text-base font-bold leading-tight tracking-tight">
+                <h3 className="relative mt-5 text-[15px] font-bold leading-snug tracking-tight text-[color:var(--color-ink)]">
                   {f.title}
                 </h3>
-                <p className="relative mt-1.5 text-xs text-[color:var(--color-ink-muted)] leading-relaxed line-clamp-3 flex-1">
+                <p className="relative mt-1.5 text-[13px] text-[color:var(--color-ink-muted)] leading-relaxed line-clamp-3 flex-1">
                   {f.body}
                 </p>
 
-                <div className="relative mt-4 pt-3 border-t border-[color:var(--color-line)] flex items-center justify-between">
-                  <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-[color:var(--color-gold)]/10 text-[color:var(--color-gold)] text-[11px] font-bold ring-1 ring-[color:var(--color-gold)]/20">
-                    {f.price}
-                  </span>
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-1 text-[10px] font-display tracking-[0.18em] text-[color:var(--color-ink-mute)] hover:text-[color:var(--color-gold)] transition"
+                <div className="relative mt-5 pt-4 border-t border-[color:var(--color-line)] flex items-center justify-between gap-3">
+                  <div className="flex items-baseline gap-1 min-w-0">
+                    <span className="text-sm font-bold tracking-tight text-[color:var(--color-ink)] truncate">
+                      {priceMain}
+                    </span>
+                    {priceUnit && (
+                      <span className="text-[11px] text-[color:var(--color-ink-mute)] truncate">
+                        / {priceUnit}
+                      </span>
+                    )}
+                  </div>
+                  <span
+                    aria-hidden
+                    className="inline-flex items-center justify-center size-7 rounded-full bg-[color:var(--color-page)] ring-1 ring-[color:var(--color-line)] text-[color:var(--color-ink-mute)] group-hover:bg-[color:var(--color-ink)] group-hover:ring-[color:var(--color-ink)] group-hover:text-white transition shrink-0"
                   >
-                    Sample
-                    <ArrowRight className="size-3 transition-transform group-hover:translate-x-0.5" />
-                  </a>
+                    <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
+                  </span>
                 </div>
               </article>
             );

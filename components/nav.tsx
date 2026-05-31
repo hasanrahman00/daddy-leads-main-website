@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { Show, UserButton } from "@clerk/nextjs";
 import { Logo } from "./ui";
 
@@ -30,18 +29,6 @@ export function Nav() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <Show when="signed-out">
-            <Link
-              href="/login"
-              className="hidden sm:inline text-sm text-[color:var(--color-ink-muted)] hover:text-[color:var(--color-ink)] font-medium"
-            >
-              Log In
-            </Link>
-            <Link href="/signup" className="btn-primary">
-              Get 100 Free Leads
-              <ArrowRight className="size-4" />
-            </Link>
-          </Show>
           <Show when="signed-in">
             <Link
               href="/dashboard"
