@@ -30,12 +30,12 @@ export function Nav() {
 
         <div className="flex items-center gap-3">
           <Show when="signed-in">
-            <Link
-              href="/dashboard"
+            <button
+              type="button"
               className="hidden sm:inline text-sm text-[color:var(--color-ink-muted)] hover:text-[color:var(--color-ink)] font-medium"
             >
               Dashboard
-            </Link>
+            </button>
             <UserButton appearance={{ elements: { avatarBox: "size-9" } }} />
           </Show>
           <Show when="signed-out">

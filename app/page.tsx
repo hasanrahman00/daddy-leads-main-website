@@ -55,10 +55,10 @@ function Hero() {
           Verified B2B leads from LinkedIn, Apollo, Maps and 8+ sources exported in one click.
         </p>
         <div className="mt-9 flex flex-col items-center gap-4">
-          <Link href="/signup" className="btn-primary btn-lg">
+          <button type="button" className="btn-primary btn-lg">
             Get 100 Free Leads
             <ArrowRight className="size-4" />
-          </Link>
+          </button>
           <p className="text-xs text-[color:var(--color-ink-mute)]">
             No credit card · 2,400+ founders shipping outbound · Cancel any time
           </p>
@@ -375,9 +375,8 @@ function FeatureGrid() {
               ? f.price.split(" / ")
               : [f.price, ""];
             return (
-              <Link
+              <div
                 key={f.title}
-                href="/signup"
                 className={`group relative overflow-hidden rounded-2xl bg-white ring-1 ring-[color:var(--color-line)] p-5 md:p-6 flex flex-col transition-all duration-300 hover:-translate-y-1 hover:ring-2 hover:shadow-xl ${t.ring} ${t.shadow}`}
               >
                 {/* top accent stripe — tone-colored, slides in on hover */}
@@ -432,7 +431,7 @@ function FeatureGrid() {
                     <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
                   </span>
                 </div>
-              </Link>
+              </div>
             );
           })}
 
@@ -456,10 +455,10 @@ function FeatureGrid() {
                   No retainer, no minimums, 95% deliverability guaranteed or we re-deliver.
                 </p>
                 <div className="mt-6 flex flex-wrap items-center gap-3">
-                  <Link href="/signup" className="btn-primary">
+                  <button type="button" className="btn-primary">
                     Get 50 Free Leads
                     <ArrowRight className="size-4" />
-                  </Link>
+                  </button>
                   <Link
                     href="/dfy-prospecting"
                     className="inline-flex items-center gap-2 rounded-full border border-white/25 text-white hover:bg-white/10 px-5 py-2.5 text-sm font-medium transition"
