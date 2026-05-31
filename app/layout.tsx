@@ -1,26 +1,24 @@
 import type { Metadata } from "next";
-import { Inter, Bebas_Neue, Playfair_Display } from "next/font/google";
+import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const geist = Geist({
+  variable: "--font-geist",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
   display: "swap",
 });
 
-const bebas = Bebas_Neue({
-  variable: "--font-bebas",
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-instrument-serif",
   subsets: ["latin"],
   weight: "400",
-  display: "swap",
-});
-
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
-  weight: ["500", "700"],
   style: ["normal", "italic"],
   display: "swap",
 });
@@ -39,7 +37,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${bebas.variable} ${playfair.variable} h-full antialiased font-sans`}
+      className={`${geist.variable} ${geistMono.variable} ${instrumentSerif.variable} h-full antialiased font-sans`}
     >
       <body className="min-h-full flex flex-col bg-[color:var(--color-page)] text-[color:var(--color-ink)]">
         <ClerkProvider
@@ -50,7 +48,7 @@ export default function RootLayout({
               colorText: "#1E1E2C",
               colorBackground: "#FFFFFF",
               borderRadius: "0.75rem",
-              fontFamily: "var(--font-inter), Inter, system-ui, sans-serif",
+              fontFamily: "var(--font-geist), system-ui, sans-serif",
             },
             elements: {
               formButtonPrimary:

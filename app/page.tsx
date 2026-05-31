@@ -1,16 +1,15 @@
-import Link from "next/link";
 import {
   ArrowRight,
-  Star,
+  BarChart3,
+  Bell,
+  CheckCircle2,
   Inbox,
   Mail,
-  Send,
-  BarChart3,
-  Users,
-  UserCircle2,
-  Bell,
-  Sparkles,
   Plus,
+  Send,
+  Star,
+  UserCircle2,
+  Users,
 } from "lucide-react";
 
 import { AnnouncementBar } from "@/components/announcement-bar";
@@ -28,6 +27,7 @@ export default function HomePage() {
       <main className="flex-1">
         <Hero />
         <HowItWorks />
+        <Pricing />
         <FeatureGrid />
         <Booking />
         <HomeFAQ />
@@ -368,7 +368,7 @@ function FeatureGrid() {
           sub="Twenty tools, one subscription. Plus a done-for-you service when you'd rather skip the build."
         />
 
-        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {features.map((f) => {
             const t = TONE[f.tone];
             const [priceMain, priceUnit] = f.price.includes(" / ")
@@ -377,7 +377,7 @@ function FeatureGrid() {
             return (
               <div
                 key={f.title}
-                className={`group relative overflow-hidden rounded-2xl bg-white ring-1 ring-[color:var(--color-line)] p-5 md:p-6 flex flex-col transition-all duration-300 hover:-translate-y-1 hover:ring-2 hover:shadow-xl ${t.ring} ${t.shadow}`}
+                className={`group relative overflow-hidden rounded-2xl bg-white ring-1 ring-[color:var(--color-line)] p-6 md:p-7 flex flex-col transition-all duration-300 hover:-translate-y-1 hover:ring-2 hover:shadow-xl ${t.ring} ${t.shadow}`}
               >
                 {/* top accent stripe — tone-colored, slides in on hover */}
                 <div
@@ -393,112 +393,181 @@ function FeatureGrid() {
 
                 {f.badge && (
                   <span
-                    className={`absolute top-3 right-3 z-10 text-[9px] font-display tracking-[0.18em] px-2.5 py-1 rounded-full shadow-sm ring-1 ring-white/30 ${BADGE_STYLE[f.badge]}`}
+                    className={`absolute top-3.5 right-3.5 z-10 text-[10px] font-bold tracking-[0.14em] px-2.5 py-1 rounded-full shadow-sm ring-1 ring-white/30 ${BADGE_STYLE[f.badge]}`}
                   >
                     {f.badge}
                   </span>
                 )}
 
                 <div
-                  className={`relative size-12 rounded-xl grid place-items-center text-[26px] ring-1 transition-transform duration-300 group-hover:scale-110 ${t.icon}`}
+                  className={`relative size-14 rounded-2xl grid place-items-center text-[30px] ring-1 transition-transform duration-300 group-hover:scale-110 ${t.icon}`}
                   aria-hidden
                 >
                   <span className="drop-shadow-sm">{f.emoji}</span>
                 </div>
 
-                <h3 className="relative mt-5 text-[15px] font-bold leading-snug tracking-tight text-[color:var(--color-ink)]">
+                <h3 className="relative mt-5 text-base font-bold leading-snug tracking-tight text-[color:var(--color-ink)]">
                   {f.title}
                 </h3>
-                <p className="relative mt-1.5 text-[13px] text-[color:var(--color-ink-muted)] leading-relaxed line-clamp-3 flex-1">
+                <p className="relative mt-2 text-sm text-[color:var(--color-ink-muted)] leading-relaxed line-clamp-3 flex-1">
                   {f.body}
                 </p>
 
-                <div className="relative mt-5 pt-4 border-t border-[color:var(--color-line)] flex items-center justify-between gap-3">
+                <div className="relative mt-6 pt-4 border-t border-[color:var(--color-line)] flex items-center justify-between gap-3">
                   <div className="flex items-baseline gap-1 min-w-0">
-                    <span className="text-sm font-bold tracking-tight text-[color:var(--color-ink)] truncate">
+                    <span className="text-base font-extrabold tracking-tight text-[color:var(--color-ink)] truncate">
                       {priceMain}
                     </span>
                     {priceUnit && (
-                      <span className="text-[11px] text-[color:var(--color-ink-mute)] truncate">
+                      <span className="text-xs text-[color:var(--color-ink-mute)] truncate">
                         / {priceUnit}
                       </span>
                     )}
                   </div>
                   <span
                     aria-hidden
-                    className="inline-flex items-center justify-center size-7 rounded-full bg-[color:var(--color-page)] ring-1 ring-[color:var(--color-line)] text-[color:var(--color-ink-mute)] group-hover:bg-[color:var(--color-ink)] group-hover:ring-[color:var(--color-ink)] group-hover:text-white transition shrink-0"
+                    className="inline-flex items-center justify-center size-8 rounded-full bg-[color:var(--color-page)] ring-1 ring-[color:var(--color-line)] text-[color:var(--color-ink-muted)] group-hover:bg-[color:var(--color-ink)] group-hover:ring-[color:var(--color-ink)] group-hover:text-white transition shrink-0"
                   >
-                    <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
+                    <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
                   </span>
                 </div>
               </div>
             );
           })}
 
-          {/* Featured: DFY Prospecting — full width across the grid */}
-          <article className="sm:col-span-2 lg:col-span-3 xl:col-span-4 relative overflow-hidden rounded-2xl ring-1 ring-[color:var(--color-gold)]/40 bg-gradient-to-br from-[color:var(--color-purple)] via-[#1a0a33] to-[color:var(--color-black)] text-white p-8 md:p-10 grain">
-            <div
-              aria-hidden
-              className="absolute -top-20 -right-20 size-72 rounded-full bg-[color:var(--color-gold)]/25 blur-3xl"
-            />
-            <div className="relative grid md:grid-cols-[1.4fr_1fr] gap-8 items-center">
-              <div>
-                <div className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.22em] text-[color:var(--color-black)] bg-[color:var(--color-gold)] px-3 py-1 rounded-full">
-                  <Sparkles className="size-3" />
-                  Done-for-you
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ───────────────────────── PRICING ───────────────────────── */
+
+function Pricing() {
+  const tiers = [
+    {
+      name: "Starter",
+      price: "$29",
+      cadence: "/mo",
+      credits: "10,000 credits / month",
+      perCredit: "≈ $0.0029 / credit",
+      note: "Solo founders testing outbound.",
+      features: [
+        "All 20 export tools",
+        "CSV + Excel + JSON export",
+        "Email support",
+        "Webhook integrations",
+      ],
+    },
+    {
+      name: "Growth",
+      price: "$99",
+      cadence: "/mo",
+      credits: "50,000 credits / month",
+      perCredit: "≈ $0.0020 / credit · save 33%",
+      note: "Where most teams land. Volume-friendly.",
+      features: [
+        "Everything in Starter",
+        "Priority scrape queue",
+        "Slack support",
+        "Direct CRM sync",
+        "Up to 5 team seats",
+      ],
+      highlight: true,
+    },
+    {
+      name: "Scale",
+      price: "$299",
+      cadence: "/mo",
+      credits: "200,000 credits / month",
+      perCredit: "≈ $0.0015 / credit · save 50%",
+      note: "Outbound agencies and multi-channel teams.",
+      features: [
+        "Everything in Growth",
+        "API access",
+        "Dedicated CSM",
+        "Unlimited seats",
+        "Custom integrations",
+      ],
+    },
+  ];
+
+  return (
+    <section id="pricing" className="py-20 scroll-mt-20">
+      <div className="container-x">
+        <SectionHeader
+          center
+          kicker="Pricing"
+          title={
+            <>
+              Pay only for what you <span className="gradient-text">use.</span>
+            </>
+          }
+          sub="Bundle monthly for the best per-credit rate. Or stay pay-as-you-go — same 20 tools, no commitment."
+        />
+
+        <div className="mt-14 grid md:grid-cols-3 gap-5">
+          {tiers.map((t) => (
+            <article
+              key={t.name}
+              className={`relative rounded-2xl bg-white p-6 flex flex-col transition-all duration-300 ${
+                t.highlight
+                  ? "ring-2 ring-[color:var(--color-gold)] shadow-2xl shadow-[color:var(--color-gold)]/15 md:-translate-y-2"
+                  : "ring-1 ring-[color:var(--color-line)] hover:-translate-y-1 hover:shadow-xl hover:ring-[color:var(--color-gold)]/30"
+              }`}
+            >
+              {t.highlight && (
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 text-[10px] font-bold tracking-widest px-3 py-1 rounded-full bg-gradient-to-r from-[color:var(--color-gold)] to-amber-500 text-white shadow-md whitespace-nowrap">
+                  MOST POPULAR
                 </div>
-                <h3 className="mt-4 text-2xl md:text-3xl font-extrabold text-balance">
-                  DFY Prospecting — we build the list, you hit send.
-                </h3>
-                <p className="mt-3 text-white/70 text-pretty max-w-xl">
-                  Send your ICP. We hand back a verified, enriched, ready-to-send lead list in 72 hours.
-                  No retainer, no minimums, 95% deliverability guaranteed or we re-deliver.
-                </p>
-                <div className="mt-6 flex flex-wrap items-center gap-3">
-                  <button type="button" className="btn-primary">
-                    Get 50 Free Leads
-                    <ArrowRight className="size-4" />
-                  </button>
-                  <Link
-                    href="/dfy-prospecting"
-                    className="inline-flex items-center gap-2 rounded-full border border-white/25 text-white hover:bg-white/10 px-5 py-2.5 text-sm font-medium transition"
-                  >
-                    Send my ICP
-                  </Link>
-                </div>
+              )}
+              <div className="text-lg font-bold tracking-tight">{t.name}</div>
+              <div className="text-xs text-[color:var(--color-gold)] mt-1 uppercase tracking-widest font-bold">
+                {t.credits}
               </div>
-              <div className="grid grid-cols-2 gap-3">
-                <div className="rounded-xl bg-white/[0.05] ring-1 ring-white/10 p-4">
-                  <div className="text-[10px] uppercase tracking-widest text-[color:var(--color-gold-soft)]">From</div>
-                  <div className="mt-1 text-2xl font-extrabold text-[color:var(--color-gold-2)]">$499</div>
-                  <div className="text-xs text-white/60 mt-0.5">per list</div>
-                </div>
-                <div className="rounded-xl bg-white/[0.05] ring-1 ring-white/10 p-4">
-                  <div className="text-[10px] uppercase tracking-widest text-[color:var(--color-gold-soft)]">Turnaround</div>
-                  <div className="mt-1 text-2xl font-extrabold text-[color:var(--color-gold-2)]">72h</div>
-                  <div className="text-xs text-white/60 mt-0.5">standard</div>
-                </div>
-                <div className="rounded-xl bg-white/[0.05] ring-1 ring-white/10 p-4">
-                  <div className="text-[10px] uppercase tracking-widest text-[color:var(--color-gold-soft)]">Min</div>
-                  <div className="mt-1 text-2xl font-extrabold text-[color:var(--color-gold-2)]">250</div>
-                  <div className="text-xs text-white/60 mt-0.5">leads</div>
-                </div>
-                <div className="rounded-xl bg-white/[0.05] ring-1 ring-white/10 p-4">
-                  <div className="text-[10px] uppercase tracking-widest text-[color:var(--color-gold-soft)]">Deliverability</div>
-                  <div className="mt-1 text-2xl font-extrabold text-[color:var(--color-gold-2)]">95%+</div>
-                  <div className="text-xs text-white/60 mt-0.5">guaranteed</div>
-                </div>
+              <div className="mt-6 flex items-baseline gap-1">
+                <span className="text-4xl font-extrabold tracking-tight text-[color:var(--color-ink)]">
+                  {t.price}
+                </span>
+                <span className="text-sm text-[color:var(--color-ink-mute)]">
+                  {t.cadence}
+                </span>
               </div>
-            </div>
-          </article>
+              <div className="text-xs text-[color:var(--color-ink-mute)] mt-1">
+                {t.perCredit}
+              </div>
+              <p className="mt-4 text-sm text-[color:var(--color-ink-muted)] min-h-12">
+                {t.note}
+              </p>
+              <ul className="mt-5 space-y-2 text-[13px] flex-1">
+                {t.features.map((feat) => (
+                  <li key={feat} className="flex items-start gap-2">
+                    <CheckCircle2 className="size-4 text-[color:var(--color-gold)] shrink-0 mt-0.5" />
+                    <span className="text-[color:var(--color-ink)]">{feat}</span>
+                  </li>
+                ))}
+              </ul>
+              <button
+                type="button"
+                className={`mt-6 w-full justify-center ${
+                  t.highlight ? "btn-primary" : "btn-ghost"
+                }`}
+              >
+                Order Now
+                <ArrowRight className="size-4" />
+              </button>
+            </article>
+          ))}
         </div>
 
-        {/* pricing anchor target */}
-        <div id="pricing" className="mt-12 text-center text-sm text-[color:var(--color-ink-muted)]">
-          All features are available on every plan — pay only for what you use, or pick a flat monthly bundle.
-          <Link href="/dfy-prospecting" className="ml-2 text-[color:var(--color-gold)] font-medium hover:underline">
-            See bundle pricing →
-          </Link>
+        {/* Pay-as-you-go note */}
+        <div className="mt-10 text-center text-sm text-[color:var(--color-ink-muted)]">
+          Prefer no commitment?{" "}
+          <span className="text-[color:var(--color-ink)] font-semibold">
+            Pay-as-you-go
+          </span>{" "}
+          is available on every tool — per-task pricing shown on each card below. Min
+          wallet load: $5.
         </div>
       </div>
     </section>

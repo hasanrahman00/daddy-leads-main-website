@@ -27,10 +27,11 @@
 
   --color-success: #10B981;
 
-  /* Font stack matches cricket-club.daddy-leads.com */
-  --font-sans: var(--font-inter), Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-display: var(--font-bebas), "Bebas Neue", "Oswald", Impact, sans-serif;
-  --font-serif: var(--font-playfair), "Playfair Display", Georgia, serif;
+  /* Modern stack — Geist + Instrument Serif */
+  --font-sans: var(--font-geist), "Geist", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: var(--font-geist-mono), "Geist Mono", ui-monospace, "SF Mono", "Cascadia Mono", monospace;
+  --font-mono: var(--font-geist-mono), "Geist Mono", ui-monospace, "SF Mono", monospace;
+  --font-serif: var(--font-instrument-serif), "Instrument Serif", Georgia, serif;
 }
 
 html, body {
@@ -38,7 +39,13 @@ html, body {
   color: var(--color-ink);
   font-family: var(--font-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
-  letter-spacing: -0.005em;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.011em;
+  font-feature-settings: "ss01", "cv11";
+}
+
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.025em;
 }
 
 /* Boomerang-style page bg — clean light with a single, soft brand glow at the very top */
@@ -124,11 +131,11 @@ body {
 
   .kicker {
     font-family: var(--font-display);
-    font-size: 0.95rem;
-    font-weight: 400;
+    font-size: 0.72rem;
+    font-weight: 500;
     color: var(--color-gold);
     text-transform: uppercase;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.16em;
     line-height: 1;
   }
 
@@ -142,7 +149,8 @@ body {
     color: transparent;
     font-family: var(--font-serif);
     font-style: italic;
-    font-weight: 700;
+    font-weight: 400;
+    letter-spacing: -0.015em;
   }
 
   .brand-glow {

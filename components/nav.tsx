@@ -3,9 +3,9 @@ import { Show, UserButton } from "@clerk/nextjs";
 import { Logo } from "./ui";
 
 const LINKS = [
-  { href: "/#pricing", label: "Pricing" },
-  { href: "/affiliate", label: "Affiliate" },
-  { href: "/#testimonials", label: "Testimonials" },
+  { href: "/", label: "Bulk Export" },
+  { href: "/dfy-prospecting", label: "DFY Prospecting" },
+  { href: "/free-list", label: "Free List" },
 ];
 
 export function Nav() {
