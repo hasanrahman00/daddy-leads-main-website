@@ -375,8 +375,9 @@ function FeatureGrid() {
               ? f.price.split(" / ")
               : [f.price, ""];
             return (
-              <article
+              <Link
                 key={f.title}
+                href="/signup"
                 className={`group relative overflow-hidden rounded-2xl bg-white ring-1 ring-[color:var(--color-line)] p-5 md:p-6 flex flex-col transition-all duration-300 hover:-translate-y-1 hover:ring-2 hover:shadow-xl ${t.ring} ${t.shadow}`}
               >
                 {/* top accent stripe — tone-colored, slides in on hover */}
@@ -431,7 +432,7 @@ function FeatureGrid() {
                     <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
                   </span>
                 </div>
-              </article>
+              </Link>
             );
           })}
 

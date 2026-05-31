@@ -38,6 +38,11 @@ export function Nav() {
             </Link>
             <UserButton appearance={{ elements: { avatarBox: "size-9" } }} />
           </Show>
+          <Show when="signed-out">
+            <button type="button" className="btn-primary">
+              Order Now
+            </button>
+          </Show>
         </div>
       </div>
     </header>

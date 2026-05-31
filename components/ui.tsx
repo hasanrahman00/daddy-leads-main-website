@@ -118,10 +118,10 @@ export function StatsCTA() {
                 replacing the whole stack.
               </p>
               <div className="mt-7">
-                <Link href="/dfy-prospecting" className="btn-primary btn-lg">
-                  Get Started Free
+                <button type="button" className="btn-primary btn-lg">
+                  Order Now
                   <ArrowRight className="size-4" />
-                </Link>
+                </button>
               </div>
             </div>
 
